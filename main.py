@@ -4,15 +4,22 @@ from __future__ import annotations
 
 import sys
 
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMessageBox
 
-from core.tools import ToolsMissing, check_tools
+from core.tools import ToolsMissing, base_dir, check_tools
 from ui.main_window import MainWindow
 
 
 def main() -> int:
+    if sys.platform == "win32":
+        # Своя иконка на панели задач, а не иконка Python
+        import ctypes
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("StickerMaker")
+
     app = QApplication(sys.argv)
     app.setApplicationName("StickerMaker")
+    app.setWindowIcon(QIcon(str(base_dir() / "assets" / "icon.png")))
     try:
         check_tools()
     except ToolsMissing as e:

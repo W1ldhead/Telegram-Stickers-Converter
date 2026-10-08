@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -12,7 +13,8 @@ sys.path.insert(0, str(ROOT))
 from core.tools import tool_path  # noqa: E402
 
 OUT = ROOT / "tests" / "samples"
-FF = str(tool_path("ffmpeg"))
+# Вложенная сборка (LGPL) не умеет кодировать H.264 — для тестовых видео берём ffmpeg из системы
+FF = shutil.which("ffmpeg") or str(tool_path("ffmpeg"))
 
 
 def ff(*args: str) -> None:
