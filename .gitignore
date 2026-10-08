@@ -1,0 +1,14 @@
+# ffmpeg/ffprobe — по 200 МБ, в git не храним (откуда взять — README)
+bin/*.exe
+
+# Тестовые видео и результаты
+tests/samples/
+tests/out*/
+
+# Python и сборка
+__pycache__/
+*.pyc
+.venv/
+build/
+dist/
+*.spec.bak
