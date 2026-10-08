@@ -50,3 +50,7 @@ python tests\acceptance.py                :: критерии приёмки д�
 - `core/limits.py` — требования Telegram и параметры подгонки.
 - `bin/` — ffmpeg.exe, ffprobe.exe и их библиотеки.
 - `licenses/` — лицензия FFmpeg (LGPL).
+
+## Лицензия
+
+Код программы — MIT (файл `LICENSE`). В собранный exe вложен [FFmpeg](https://ffmpeg.org) под лицензией LGPL 2.1+ (сборка [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds), исходники — по ссылкам там же); текст лицензии — `licenses/FFmpeg-LGPL.txt`.

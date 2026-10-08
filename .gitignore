@@ -13,3 +13,6 @@ build/
 dist/
 *.spec.bak
 bin/*.dll
+
+# Рабочие заметки разработки — только локально
+CLAUDE.md
